@@ -1,0 +1,48 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+header{
+    background-image: url('natural.png');
+}
+.navbar {
+    
+    backdrop-filter: blur(10px); 
+    padding: 1rem;
+    color: rgba(0, 0, 0, 0.1);
+}
+.map-placeholder {
+    width: 100%;
+    height: 300px;
+    background-color: #ddd;
+    border: 1px solid #ccc;
+}
+
+footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    padding: 20px
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    height: 40px;
+}
+
+
+#emergencyBtn {
+    z-index: 1050;
+    margin-right: 250px;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}

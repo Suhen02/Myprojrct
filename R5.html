@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Ready Alert</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="R5.css">
+    <link rel="icon" href="suhenhack.png">
+</head>
+<body>
+    
+    
+    <header class="bg-dark text-white text-center py-3">
+        <h1>Natural Disaster Alert ⚠️</h1>
+        <nav class="navbar navbar-expand-lg navbar-dark ">
+            <div class="container">
+                <a class="navbar-brand" href="#" >Home</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                   
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item" style="background-color:#007d81; border: 2px solid #333;"><a class="nav-link" href="#alerts">Alerts</a></li>
+                        <li class="nav-item" style="background-color:#007d81; border: 2px solid #333; "><a class="nav-link" href="#resources">Resources</a></li>
+                    
+                    </ul>
+                    <button id="emergencyBtn" class="btn btn-danger position-fixed  right-0 m-3 " class="nav-link" href="#contact">Emergency</button>
+                    
+                </div>
+            </div>
+            
+           
+        </nav>
+    </header>
+    
+    <section id="alert-banner" class="bg-warning text-dark text-center py-2">
+        <div id="rolling-alerts" class="rolling-alerts">
+            <p id="alert-message">Loading alerts...</p>
+        </div>
+    </section>
+    <button id="showNumber"  class="btn btn-danger position-fixed top-0 right-0 m-3" style="position: absolute;right: 0%;background-color: #3f4949;margin-top:70%;border-color: black;">Contacts</button>
+    <div id="map" style="height: 500px; width: 100%;">
+
+    <section id="map" class="container my-5">
+        <h2 class="text-center">Interactive Map</h2>
+        <p class="text-center">Map showing affected areas, shelters, and evacuation routes.</p>
+        <div class="map-placeholder bg-light border" style="height: 300px;">[Map Placeholder]</div>
+        <div class="text-center mt-3">
+            <button class="btn btn-primary" id="getLoc">View Details</button>
+        </div>
+    </section>
+</div>
+    <section id="resources" class="container my-5 ">
+        <h2 class="text-center">Resources</h2>
+        <ul class="list-group"  >
+            <li class="list-group-item d-flex justify-content-between align-items-center" style="background-color:#333;border-color: #3f4949;">
+                <a href="#">Emergency Preparedness Guide</a>
+                <button class="btn btn-secondary" id="downloadBtn">Download</button>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center" style="background-color: #333;border-color: #3f4949;">
+                <a href="#">Evacuation Routes</a>
+                <button class="btn btn-secondary" id="downloadBtnRoute">Download</button>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center" style="background-color: #333;border-color: #3f4949;">
+                <a href="#">Shelter Locations</a>
+                <button class="btn btn-secondary" id="downloadBtnShelt">Download</button>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center" style="background-color: #333;border-color: #3f4949;">
+                <a href="#">Safety Tips</a>
+                <button class="btn btn-secondary" id="downloadBtnSafty">Download</button>
+            </li>
+        </ul>
+    </section>
+   
+    <div class="modal fade" id="emergencyModal" tabindex="-1" role="dialog" aria-labelledby="emergencyModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="emergencyModalLabel">Emergency Contacts</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p id="emergencyContacts">Loading emergency contacts...</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+     
+    <footer class="bg-dark text-white text-center py-3">
+        <p>© 2024 Natural Disaster Alert. All rights reserved.</p>
+        <button class="btn btn-primary" onclick="contactSupport()">Contact Support</button>
+    </footer>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="R3.js"></script>
+    <section id="submit-alert" class="container my-5">
+        <h2 class="text-center">Submit an Alert</h2>
+        <form action="R.php" method="post" class="text-center">
+            <div class="form-group">
+                <label for="alert">Alert Message:</label>
+                <input type="text" id="alert" name="alert" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary" id="subitAlert" href="R.php">Submit Alert</button>
+        </form>
+    </section>
+    
+</body>
+</html>
